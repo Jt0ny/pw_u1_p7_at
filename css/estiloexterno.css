@@ -1,3 +1,4 @@
+/*este se usa para que todos los elementos tengan el estilo indicado*/
 *{
     text-align: center;
 }
@@ -22,8 +23,45 @@ p{
 }
 
 /*Todos los comentarios que necesite*/
+/*Elemento*/
 button{
     color: aqua;
     background-color:black;
     border-radius: 10px;
+}
+
+/*clases*/
+.titulos {
+    color: green;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/*ID*/
+#pie_pagina_uce {
+    color: burlywood;
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    background: blueviolet;
+}
+/*ATRIBUTO*/
+/*
+img[src="https://upload.wikimedia.org/wikipedia/commons/a/af/Tux.png"] {
+    width: 250px;
+    height: 300px;
+}*/
+img[src*=".png"] {
+    width: 250px;
+    height: 300px;
+}
+input[type="text"] {
+    background-color: cornflowerblue;
+}
+button:hover {
+    color: yellow;
+    background-color: white;
+}
+/*COMBINACION DE SELECTORE*/
+h1,h3,h5{
+    color: red;
+    font-size: 20px;
 }
