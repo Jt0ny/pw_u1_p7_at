@@ -130,4 +130,134 @@ const conceptosJS = () => {
     }else{
         console.log('No son lo mismo');
     }
+
+
+     //Arreglo de objetos
+
+     const estu1 = {
+        nombre: 'Luis',
+        apellido: 'Valladares',
+        edad: 25,
+    }
+    const estu2 = {
+        nombre: 'jose',
+        apellido: 'perez',
+        edad: 23,
+    }
+    const estu3 = {
+        nombre: 'jorge',
+        apellido: 'gomez',
+        edad: 30,
+    }
+
+    const estudiantes = [estu1, estu2, estu3];
+    console.log(estudiantes);
+    console.log(estudiantes[1]);
+
+    const arregloEstudiantes2 = [{
+        nombre: 'Luis',
+        apellido: 'Valladares',
+        edad: 25,
+    }, {
+        nombre: 'jose',
+        apellido: 'perez',
+        edad: 23,
+    }, {
+        nombre: 'jorge',
+        apellido: 'gomez',
+        edad: 30,
+    }, {
+        nombre: 'juan',
+        apellido: 'gomez',
+        edad: 30,
+    }, {
+        nombre: 'jose',
+        apellido: 'gomez',
+        edad: 30,
+    }, {
+        nombre: 'carla',
+        apellido: 'gomez',
+        edad: 30,
+    }];
+
+    console.log(arregloEstudiantes2);
+    console.table(arregloEstudiantes2);
+    const estudiante = arregloEstudiantes2.pop(); //.pop() elimina el ultimo elemento del arreglo
+    console.log(estudiante);
+    console.log(arregloEstudiantes2);
+    console.table(arregloEstudiantes2);
+
+    // Desestructuracion de arreglos
+    // consiste en separar en partes los elementos de un arreglo
+    const colores = ['rojo', 'azul', 'verde', 'amarillo', 'rosado'];
+    const [p1, p2, p3, p4, p5] = colores;
+    console.log(p1);
+    console.log(p5);
+
+    const [m1, m2, m3, m4, m5, m6] = ['enero', 'febrero', 'marzo', 'abril', 'mayo'];
+    console.log(m1);
+    console.log(m2);
+    console.log(m5);
+    console.log(m6);
+
+    const [, mes2, , , mes5] = ['enero', 'febrero', 'marzo', 'abril', 'mayo'];
+    console.log(mes2);
+    console.log(mes5);
+
+    // Desestructuracion de objetos
+    console.log('--------------------> Desestructuracion de objetos');
+    const automovil = {
+        marca: 'Toyota',
+        modelo: 'Corolla',
+        anio: 2021,
+        color: 'rojo',
+    }
+
+    /*const { marca, modelo, anio, color } = automovil;
+    console.log(marca);
+    console.log(modelo);
+    console.log(anio);
+    console.log(color);
+    */
+
+    const automovil2 = {
+        marca: 'Mazda',
+        modelo: '3',
+        anio: 2024,
+        color: 'negro',
+    }
+
+    desestructuracion(automovil2);
+    desestructuracion(automovil);
+
+    const { nombreP, raza, estatura } = { nombreP: "Perro", raza: "pitbull", estatura: 126 }
+    console.log(nombreP)
+    console.log(raza)
+    console.log(estatura)
+
+    //Trabajo en clase
+    //definir y desestructurar en una sola linea
+    const { nombreE, presidente: { nombrePr, edadp }, deporte } = { nombreE: 'IDV', presidente: { nombrePr: 'Franklin ', edadp: 60 }, deporte: "Futbol" }
+    console.log(nombrePr)
+    
+    //desestructurar en dos pasos 
+    const universidad = {
+        nombreU: 'UCE',
+        rector : {
+            nombreR: 'Juan',
+            edadR: 50,
+        },
+        estudiantesU : 5000
+    }
+    const {nombreU,estudiantesU, rector}=universidad
+    console.log(rector)
+    const {nombreR,edadR}=rector
+    console.log(nombreR)
+}
+const desestructuracion = ({ marca, modelo, anio, color }) => {
+    console.log('metodo de Desestructuracion de objetos');
+    console.log(marca);
+    console.log(modelo);
+    console.log(anio);
+    console.log(color);
 }
