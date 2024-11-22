@@ -32,3 +32,25 @@
     
     grid-column: span 2;
 }
+
+button{
+    cursor: pointer;
+    margin: 5px;
+    padding: 5px;/*Espaciado interno*/
+    border-radius: 32px;
+   border: none;
+    background: rgb(101, 114, 133);
+    /*background: rgb(176, 190, 199);*/
+    font-size: 25PX;
+    color: blanchedalmond;
+    box-shadow: 4px 5px 2px 2px rgb(14, 3, 3);/*Sombra*/
+    font-family: Georgia, 'Times New Roman', Times, serif;/*Tipo de letra*/
+}
+
+button:hover{
+    background: rgb(91, 111, 139);
+}
+
+button:active{
+    background:  rgb(57, 89, 138); 
+}
