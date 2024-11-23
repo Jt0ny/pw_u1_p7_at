@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/estilos.css">
-    <script src="stylesheet" href="../js/calculadora.js"> </script>
+    <script src="../js/calculadora.js"></script>
 </head>
 
 <body>
@@ -19,13 +19,13 @@
                 <div id="id-display" class="display">
                   0
                 </div>
-                <button class="colum-2">C</button>
-                <button>&larr;</button>
-                <button>%</button>
+                <button class="colum-2" onclick="limpiar()">C</button>
+                <button onclick="borrarUltimo()">&larr;</button>
+                <button onclick='recibirOperacion("%")'>%</button>
                 <button onclick="recibirValor(7)">7</button>
                 <button onclick="recibirValor(8)">8</button>
                 <button onclick="recibirValor(9)">9</button>
-                <button>x</button>
+                <button onclick='recibirOperacion("x")'>x</button>
                 <button onclick="recibirValor(4)">4</button>
                 <button onclick="recibirValor(5)">5</button>
                 <button onclick="recibirValor(6)">6</button>
