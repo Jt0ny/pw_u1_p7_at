@@ -9,30 +9,45 @@ function setearValor(valor) {
 }
 
 function setearValorConcatenado(valor) {
-    let valorActual = document.getElementById('id-display').inertText;
-    console.log(valorActual);
-    document.getElementById('id-display').innerText = valorActual + valor;
+    let valorActual = document.getElementById('id-display').innerText; 
+    if (valorActual === '0') {
+       
+        document.getElementById('id-display').innerText = valor;
+    } else {
+        
+        document.getElementById('id-display').innerText = valorActual + valor;
+    }
 }
 
 function recibirValor(valor) {
 
-     if (num1 === null) {
-       
-        num1 =valor;
-        
+     // Si aún no se ha seleccionado una operación, construimos num1
+    if (operacion === '') {
+        if (num1 === null) {
+            num1 = valor; 
+        } else {
+            num1 = parseFloat(num1.toString() + valor.toString()); // Concatenamos 
+        }
+        setearValorConcatenado(valor); 
     } else {
-        num2 = valor;
-        
+    
+        if (num2 === null) {
+            num2 = valor;
+        } else {
+            num2 = parseFloat(num2.toString() + valor.toString());  
+        }
+        setearValorConcatenado(valor); 
     }
-    /*num1 = valor;  */
-   setearValor(valor);
+   
 }
 
 
 
 function recibirOperacion(op) {
-    operacion = op;
-   
+    if (num1 !== null) {
+        operacion = op;
+        setearValorConcatenado(` ${op} `); 
+    }
 }
 
 
@@ -42,13 +57,13 @@ function igual() {
         valorFinal = num1 + num2;
     } else if (operacion === '-') {
         valorFinal = num1 - num2;
-    }else if (operacion === 'x') {
+    } else if (operacion === 'x') {
         valorFinal = num1 * num2;
     }
     else if (operacion === '%') {
         valorFinal = num2 !== 0 ? num1 / num2 : 'Error';
     }
-    setearValor(valorFinal);
+    setearValor(`${num1} ${operacion} ${num2} = ${valorFinal}`);
     console.log(valorFinal);
 }
 
@@ -59,7 +74,7 @@ function limpiar() {
     operacion = '';
     setearValor(0);
 }
- 
+
 function borrarUltimo() {
     let valorActual = document.getElementById('id-display').innerText;
 
@@ -67,18 +82,17 @@ function borrarUltimo() {
         // Elimina  último 
         valorActual = valorActual.slice(0, -1);
     } else {
-        // Si solo queda un carácter, reinicia el display a "0"
         valorActual = '0';
     }
 
-    // Actualiza 
+    
     document.getElementById('id-display').innerText = valorActual;
 
     // Actualiza los números en la lógica interna
     if (operacion === '') {
-        num1 = parseFloat(valorActual) || null; // Si display está vacío, num1 será null
+        num1 = parseFloat(valorActual) || null; 
     } else {
-        num2 = parseFloat(valorActual) || null; // Si display está vacío, num2 será null
+        num2 = parseFloat(valorActual) || null; 
     }
 }
 
